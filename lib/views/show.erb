@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>The Gossip Project - Show gossip</title>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">The Gossip Project</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="/">Affiche les potins <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/gossips/new/">Créer un potin</a>
+        </li>
+        </ul>
+        </div>
+    </nav>
+    <div style="text-align:center">
+    <h2>PAGE POTIN !</h2>
+    <% gossips.each do |gossip| %>
+        <p> Voici le potin n° <%= id%><br/>
+        Son auteur : <%= gossip.gossip_author %><br/>
+        Le contenu du potin : <%= gossip.gossip_content %>
+        </p>
+    <% end %>
+    <a href="<%= id%>/edit" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Editer le potin</a>
+    <br>
+    <a href="/">Lien pour revenir à la page des potins</a>
+    </div>
+    </body>
+    </html>
